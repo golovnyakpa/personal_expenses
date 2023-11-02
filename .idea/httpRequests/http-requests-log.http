@@ -1,0 +1,690 @@
+GET http://localhost:8189/api/v1/expenses/stats/top?start_period=20220101000000&end_period=20240101000000&sort=asc
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-11-03T010427.200.json
+
+###
+
+GET http://localhost:8189/api/v1/expenses/stats/top?start_period=20220101000000&end_period=20240101000000&sort=a
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-11-03T010416.200.json
+
+###
+
+GET http://localhost:8189/api/v1/expenses/stats/top?start_period=20220101000000&end_period=20240101000000&sort=asc
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-11-03T010410.200.json
+
+###
+
+GET http://localhost:8189/api/v1/expenses/stats/top?start_period=20220101000000&end_period=20240101000000
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-11-03T010324.200.json
+
+###
+
+POST http://localhost:8189/api/v1/expenses
+Content-Type: application/json
+Content-Length: 63
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "title": "mac",
+  "amount": 720,
+  "category": "products"
+}
+
+<> 2023-11-03T010321.200.json
+
+###
+
+POST http://localhost:8189/api/v1/expenses
+Content-Type: application/json
+Content-Length: 66
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "title": "perek",
+  "amount": 2000,
+  "category": "products"
+}
+
+<> 2023-11-03T010312.200.json
+
+###
+
+POST http://localhost:8189/api/v1/expenses
+Content-Type: application/json
+Content-Length: 66
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "title": "query",
+  "amount": 1000,
+  "category": "products"
+}
+
+<> 2023-11-03T010302.200.json
+
+###
+
+GET http://localhost:8189/api/v1/expenses/stats/top?start_period=20220101000000&end_period=20240101000000
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-11-03T010146.200.json
+
+###
+
+POST http://localhost:8189/api/v1/expenses
+Content-Type: application/json
+Content-Length: 66
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "title": "query",
+  "amount": 1000,
+  "category": "products"
+}
+
+<> 2023-11-03T010144.200.json
+
+###
+
+GET http://localhost:8189/api/v1/expenses/stats/top?start_period=20220101000000&end_period=20240101000000
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-11-03T010058.500.json
+
+###
+
+POST http://localhost:8189/api/v1/expenses
+Content-Type: application/json
+Content-Length: 66
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "title": "query",
+  "amount": 1000,
+  "category": "products"
+}
+
+<> 2023-11-03T010053.200.json
+
+###
+
+GET http://localhost:8189/api/v1/expenses/stats/top?start_period=20220101000000&end_period=20240101000000
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-11-03T005921.200.json
+
+###
+
+POST http://localhost:8189/api/v1/expenses
+Content-Type: application/json
+Content-Length: 66
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "title": "query",
+  "amount": 1000,
+  "category": "products"
+}
+
+<> 2023-11-03T005916-1.200.json
+
+###
+
+POST http://localhost:8189/api/v1/expenses
+Content-Type: application/json
+Content-Length: 66
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "title": "query",
+  "amount": 1000,
+  "category": "products"
+}
+
+<> 2023-11-03T005916.200.json
+
+###
+
+POST http://localhost:8189/api/v1/expenses
+Content-Type: application/json
+Content-Length: 66
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "title": "query",
+  "amount": 1000,
+  "category": "products"
+}
+
+<> 2023-11-03T005915-1.200.json
+
+###
+
+POST http://localhost:8189/api/v1/expenses
+Content-Type: application/json
+Content-Length: 66
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "title": "query",
+  "amount": 1000,
+  "category": "products"
+}
+
+<> 2023-11-03T005915.200.json
+
+###
+
+GET http://localhost:8189/api/v1/expenses/stats/top?start_period=20220101000000&end_period=20240101000000
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-11-03T005654.200.json
+
+###
+
+GET http://localhost:8189/api/v1/expenses/stats/top?start_period=20220101000000&end_period=20240101000000
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-11-03T005635.200.json
+
+###
+
+POST http://localhost:8189/api/v1/expenses
+Content-Type: application/json
+Content-Length: 66
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "title": "query",
+  "amount": 1000,
+  "category": "products"
+}
+
+<> 2023-11-03T005633.200.json
+
+###
+
+POST http://localhost:8189/api/v1/expenses
+Content-Type: application/json
+Content-Length: 66
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "title": "query",
+  "amount": 1000,
+  "category": "products"
+}
+
+<> 2023-11-03T005632.200.json
+
+###
+
+POST http://localhost:8189/api/v1/expenses
+Content-Type: application/json
+Content-Length: 66
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "title": "query",
+  "amount": 1000,
+  "category": "products"
+}
+
+<> 2023-11-03T005631-1.200.json
+
+###
+
+POST http://localhost:8189/api/v1/expenses
+Content-Type: application/json
+Content-Length: 66
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "title": "query",
+  "amount": 1000,
+  "category": "products"
+}
+
+<> 2023-11-03T005631.200.json
+
+###
+
+POST http://localhost:8189/api/v1/expenses
+Content-Type: application/json
+Content-Length: 66
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "title": "query",
+  "amount": 1000,
+  "category": "products"
+}
+
+<> 2023-11-03T005630-1.200.json
+
+###
+
+POST http://localhost:8189/api/v1/expenses
+Content-Type: application/json
+Content-Length: 66
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "title": "query",
+  "amount": 1000,
+  "category": "products"
+}
+
+<> 2023-11-03T005630.200.json
+
+###
+
+POST http://localhost:8189/api/v1/expenses
+Content-Type: application/json
+Content-Length: 66
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "title": "query",
+  "amount": 1000,
+  "category": "products"
+}
+
+<> 2023-11-03T005629.200.json
+
+###
+
+POST http://localhost:8189/api/v1/expenses
+Content-Type: application/json
+Content-Length: 66
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "title": "query",
+  "amount": 1000,
+  "category": "products"
+}
+
+<> 2023-11-03T005628-1.200.json
+
+###
+
+POST http://localhost:8189/api/v1/expenses
+Content-Type: application/json
+Content-Length: 66
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "title": "query",
+  "amount": 1000,
+  "category": "products"
+}
+
+<> 2023-11-03T005628.200.json
+
+###
+
+POST http://localhost:8189/api/v1/expenses
+Content-Type: application/json
+Content-Length: 66
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "title": "query",
+  "amount": 1000,
+  "category": "products"
+}
+
+<> 2023-11-03T005627.200.json
+
+###
+
+GET http://localhost:8189/api/v1/expenses?page=1
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-11-03T005540.200.json
+
+###
+
+GET http://localhost:8189/api/v1/expenses/stats/top?start_period=20220101000000&end_period=20240101000000
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-11-03T005500.200.json
+
+###
+
+POST http://localhost:8189/api/v1/expenses
+Content-Type: application/json
+Content-Length: 66
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "title": "query",
+  "amount": 1000,
+  "category": "products"
+}
+
+<> 2023-11-03T005441.200.json
+
+###
+
+POST http://localhost:8189/api/v1/expenses
+Content-Type: application/json
+Content-Length: 66
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "title": "query",
+  "amount": 1000,
+  "category": "products"
+}
+
+<> 2023-11-03T005048.200.json
+
+###
+
+GET http://localhost:8189/api/v1/expenses/stats/top?start_period=20220101000000&end_period=20240101000000
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-11-03T004424.200.json
+
+###
+
+POST http://localhost:8189/api/v1/expenses
+Content-Type: application/json
+Content-Length: 66
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "title": "query",
+  "amount": 1000,
+  "category": "products"
+}
+
+<> 2023-11-03T004420.200.json
+
+###
+
+POST http://localhost:8189/api/v1/expenses
+Content-Type: application/json
+Content-Length: 66
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "title": "query",
+  "amount": 1000,
+  "category": "products"
+}
+
+<> 2023-11-03T004419-1.200.json
+
+###
+
+POST http://localhost:8189/api/v1/expenses
+Content-Type: application/json
+Content-Length: 66
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "title": "query",
+  "amount": 1000,
+  "category": "products"
+}
+
+<> 2023-11-03T004419.200.json
+
+###
+
+GET http://localhost:8189/api/v1/expenses/stats/top?start_period=20220101000000&end_period=20240101000000
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-11-03T004132.200.json
+
+###
+
+GET http://localhost:8189/api/v1/expenses/stats/top?start_period=20220101000000&end_period=20240101000000
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-11-03T004120.200.json
+
+###
+
+GET http://localhost:8189/api/v1/expenses/stats/top?start_period=20220101000000&end_period=20240101000000
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-11-03T003708.200.json
+
+###
+
+GET http://localhost:8189/api/v1/expenses/stats/top?start_period=20230101000000&end_period=20240101000000
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-11-03T003612.200.json
+
+###
+
+GET http://localhost:8189/api/v1/expenses/stats/top?start_period=20230101000000&end_period=20240101000000
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-11-03T003516.200.json
+
+###
+
+POST http://localhost:8189/api/v1/expenses
+Content-Type: application/json
+Content-Length: 66
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "title": "query",
+  "amount": 1000,
+  "category": "products"
+}
+
+<> 2023-11-03T003514.200.json
+
+###
+
+POST http://localhost:8189/api/v1/expenses
+Content-Type: application/json
+Content-Length: 66
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "title": "query",
+  "amount": 1000,
+  "category": "products"
+}
+
+<> 2023-11-03T003513-1.200.json
+
+###
+
+POST http://localhost:8189/api/v1/expenses
+Content-Type: application/json
+Content-Length: 66
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "title": "query",
+  "amount": 1000,
+  "category": "products"
+}
+
+<> 2023-11-03T003513.200.json
+
+###
+
+POST http://localhost:8189/api/v1/expenses
+Content-Type: application/json
+Content-Length: 66
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "title": "query",
+  "amount": 1000,
+  "category": "products"
+}
+
+<> 2023-11-03T003512-1.200.json
+
+###
+
+POST http://localhost:8189/api/v1/expenses
+Content-Type: application/json
+Content-Length: 66
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "title": "query",
+  "amount": 1000,
+  "category": "products"
+}
+
+<> 2023-11-03T003512.200.json
+
+###
+
+POST http://localhost:8189/api/v1/expenses
+Content-Type: application/json
+Content-Length: 66
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "title": "query",
+  "amount": 1000,
+  "category": "products"
+}
+
+<> 2023-11-03T003511.200.json
+
+###
+
+GET http://localhost:8189/api/v1/expenses/stats/top?start_period=20230101000000&end_period=20240101000000
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-11-03T003506.200.json
+
+###
+
+GET http://localhost:8189/api/v1/expenses/stats/top?start_period=20230101000000&end_period=20240101000000
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-11-03T003030.500.json
+
+###
+
+GET http://localhost:8189/api/v1/expenses/stats/top?start_period=20230101000000&end_period=20240101000000
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-11-03T002536.500.json
+
+###
+

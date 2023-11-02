@@ -7,9 +7,13 @@ import com.github.golovnyakpa.personal_expenses.dtos.request.ExpenseDtoRq;
 import com.github.golovnyakpa.personal_expenses.exceptions.ResourceNotFoundException;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 @RequiredArgsConstructor
@@ -20,8 +24,8 @@ public class ExpensesServiceImpl implements ExpensesService {
     private final ExpenseConverter expenseConverter;
 
     @Override
-    public List<Expense> getAll() {
-        return expenseRepository.findAll();
+    public List<Expense> getAll(int realPageIndex, int pageSize) {
+        return expenseRepository.findAll(PageRequest.of(realPageIndex - 1, pageSize)).getContent();
     }
 
     @Override
@@ -62,5 +66,32 @@ public class ExpensesServiceImpl implements ExpensesService {
                         )
                 )
         );
+    }
+
+    @Override
+    public List<Expense> getSortedExpenses(
+            LocalDateTime startDate,
+            LocalDateTime endDate,
+            String sortDirection,
+            int realPageIndex,
+            int pageSize
+    ) {
+        Sort.Direction sortDir = (Objects.equals(sortDirection, "asc")) ? Sort.Direction.ASC : Sort.Direction.DESC;
+        var pageRequest = PageRequest.of(realPageIndex, pageSize, sortDir, "amount");
+        System.out.println("date time is: " + startDate);
+        return expenseRepository
+                .findByDateTimeBetween(startDate, endDate, pageRequest)
+                .getContent();
+    }
+
+    @Override
+    public List<Expense> getSortedCategories(
+            LocalDateTime startDate,
+            LocalDateTime endDate,
+            String sortDirection,
+            int realPageIndex,
+            int pageSize
+    ) {
+        return null;
     }
 }

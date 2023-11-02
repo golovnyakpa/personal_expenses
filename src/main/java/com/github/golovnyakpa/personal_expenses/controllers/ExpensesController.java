@@ -10,6 +10,9 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/expenses")
@@ -22,6 +25,15 @@ public class ExpensesController {
     public ExpenseDtoRs saveNewExpense(@Valid @RequestBody ExpenseDtoRq expenseDtoRq) {
         Expense res = expensesService.save(expenseDtoRq);
         return expenseConverter.entityToDto(res);
+    }
+
+    @GetMapping
+    public List<ExpenseDtoRs> getAll(
+            @RequestParam(defaultValue = "1") int page,
+            @RequestParam(name = "page_size", defaultValue = "5") int pageSize
+    ) {
+        return expensesService.getAll(page, pageSize).stream().map(expenseConverter::entityToDto)
+                .collect(Collectors.toList());
     }
 
     @GetMapping("/{id}")

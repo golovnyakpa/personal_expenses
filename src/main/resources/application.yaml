@@ -2,6 +2,16 @@ server:
   port: 8189
   servlet:
     context-path: /
+  error:
+    include-message: always
+
+logging:
+  level:
+    org:
+      hibernate:
+        orm:
+          jdbc:
+            bind: trace
 
 spring:
   datasource:
@@ -13,7 +23,10 @@ spring:
     show-sql: true
     properties:
       hibernate:
+        format_sql: true
         dialect: org.hibernate.dialect.H2Dialect
+        query:
+          substitutions:
   h2:
     console:
       enabled: true

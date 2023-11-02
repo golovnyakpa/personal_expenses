@@ -31,6 +31,6 @@ public class ExpenseDtoRq {
     // todo add time zone support
 
     @JsonProperty("date_time")
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime dateTime;
 }
