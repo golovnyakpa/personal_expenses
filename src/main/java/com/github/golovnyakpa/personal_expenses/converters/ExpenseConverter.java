@@ -1,8 +1,10 @@
 package com.github.golovnyakpa.personal_expenses.converters;
 
 import com.github.golovnyakpa.personal_expenses.dao.entities.Expense;
+import com.github.golovnyakpa.personal_expenses.dao.entities.ExpensesSumByCategory;
 import com.github.golovnyakpa.personal_expenses.dtos.request.ExpenseDtoRq;
 import com.github.golovnyakpa.personal_expenses.dtos.response.ExpenseDtoRs;
+import com.github.golovnyakpa.personal_expenses.dtos.response.ExpensesSumByCategoryRs;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
@@ -32,5 +34,9 @@ public class ExpenseConverter {
             newExpense.setDateTime(LocalDateTime.now());
         }
         return newExpense;
+    }
+
+    public ExpensesSumByCategoryRs entityExpensesSumByCategoryToRs(ExpensesSumByCategory es) {
+        return new ExpensesSumByCategoryRs(es.category(), es.amount());
     }
 }

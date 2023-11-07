@@ -2,6 +2,7 @@ package com.github.golovnyakpa.personal_expenses.controllers;
 
 import com.github.golovnyakpa.personal_expenses.converters.ExpenseConverter;
 import com.github.golovnyakpa.personal_expenses.dtos.response.ExpenseDtoRs;
+import com.github.golovnyakpa.personal_expenses.dtos.response.ExpensesSumByCategoryRs;
 import com.github.golovnyakpa.personal_expenses.services.ExpensesService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -31,13 +32,22 @@ public class StatsController {
             @RequestParam(name = "page_size", defaultValue = "10") int pageSize
     ) {
         return expensesService
-                .getSortedExpenses(startPeriod, endPeriod, sort, page - 1, pageSize)
+                .getSortedExpenses(startPeriod, endPeriod, sort, page, pageSize)
                 .stream().map(expenseConverter::entityToDto).collect(Collectors.toList());
     }
 
     @GetMapping("top_categories")
-    List<ExpenseDtoRs> getBiggestExpensesCategories(@RequestParam(defaultValue = "5") Integer number) {
-        return null;
+    List<ExpensesSumByCategoryRs> getBiggestExpensesCategories(
+            @RequestParam(name = "start_period") @DateTimeFormat(pattern = "yyyyMMddHHmmss") LocalDateTime startPeriod,
+            @RequestParam(name = "end_period") @DateTimeFormat(pattern = "yyyyMMddHHmmss") LocalDateTime endPeriod,
+            @RequestParam(defaultValue = "desc") String sort,
+            @RequestParam(defaultValue = "1") int page,
+            @RequestParam(name = "page_size", defaultValue = "10") int pageSize
+    ) {
+        return expensesService
+                .getSortedExpensesByCategory(startPeriod, endPeriod, sort, page, pageSize)
+                .stream().map(expenseConverter::entityExpensesSumByCategoryToRs)
+                .collect(Collectors.toList());
     }
 
 }

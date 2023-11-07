@@ -1,6 +1,7 @@
 package com.github.golovnyakpa.personal_expenses.services;
 
 import com.github.golovnyakpa.personal_expenses.dao.entities.Expense;
+import com.github.golovnyakpa.personal_expenses.dao.entities.ExpensesSumByCategory;
 import com.github.golovnyakpa.personal_expenses.dtos.request.ExpenseDtoRq;
 
 import java.time.LocalDateTime;
@@ -20,5 +21,5 @@ public interface ExpensesService {
 
     List<Expense> getSortedExpenses(LocalDateTime startDate, LocalDateTime endDate, String sortDirection, int realPageIndex, int pageSize);
 
-    List<Expense> getSortedCategories(LocalDateTime startDate, LocalDateTime endDate, String sortDirection, int realPageIndex, int pageSize);
+    List<ExpensesSumByCategory> getSortedExpensesByCategory(LocalDateTime startDate, LocalDateTime endDate, String sortDirection, int realPageIndex, int pageSize);
 }

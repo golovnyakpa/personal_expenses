@@ -2,6 +2,7 @@ package com.github.golovnyakpa.personal_expenses.services;
 
 import com.github.golovnyakpa.personal_expenses.converters.ExpenseConverter;
 import com.github.golovnyakpa.personal_expenses.dao.entities.Expense;
+import com.github.golovnyakpa.personal_expenses.dao.entities.ExpensesSumByCategory;
 import com.github.golovnyakpa.personal_expenses.dao.repositories.ExpensesRepository;
 import com.github.golovnyakpa.personal_expenses.dtos.request.ExpenseDtoRq;
 import com.github.golovnyakpa.personal_expenses.exceptions.ResourceNotFoundException;
@@ -76,22 +77,26 @@ public class ExpensesServiceImpl implements ExpensesService {
             int realPageIndex,
             int pageSize
     ) {
-        Sort.Direction sortDir = (Objects.equals(sortDirection, "asc")) ? Sort.Direction.ASC : Sort.Direction.DESC;
-        var pageRequest = PageRequest.of(realPageIndex, pageSize, sortDir, "amount");
-        System.out.println("date time is: " + startDate);
+        Sort.Direction sortDir = getSortDirection(sortDirection);
+        PageRequest pr = PageRequest.of(realPageIndex - 1, pageSize, sortDir, "amount");
         return expenseRepository
-                .findByDateTimeBetween(startDate, endDate, pageRequest)
+                .findByDateTimeBetween(startDate, endDate, pr)
                 .getContent();
     }
 
     @Override
-    public List<Expense> getSortedCategories(
+    public List<ExpensesSumByCategory> getSortedExpensesByCategory(
             LocalDateTime startDate,
             LocalDateTime endDate,
             String sortDirection,
             int realPageIndex,
             int pageSize
     ) {
-        return null;
+        PageRequest pr = PageRequest.of(realPageIndex - 1, pageSize);
+        return expenseRepository.getExpenseSumByCategory(startDate, endDate, pr).getContent();
+    }
+
+    private Sort.Direction getSortDirection(String sortDirection) {
+        return (Objects.equals(sortDirection, "asc")) ? Sort.Direction.ASC : Sort.Direction.DESC;
     }
 }
