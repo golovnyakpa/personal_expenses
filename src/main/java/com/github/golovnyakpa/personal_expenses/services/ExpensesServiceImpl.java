@@ -5,9 +5,12 @@ import com.github.golovnyakpa.personal_expenses.dao.entities.Expense;
 import com.github.golovnyakpa.personal_expenses.dao.entities.ExpensesSumByCategory;
 import com.github.golovnyakpa.personal_expenses.dao.repositories.ExpensesRepository;
 import com.github.golovnyakpa.personal_expenses.dtos.request.ExpenseDtoRq;
+import com.github.golovnyakpa.personal_expenses.exceptions.ResourceForbiddenException;
 import com.github.golovnyakpa.personal_expenses.exceptions.ResourceNotFoundException;
+import com.github.golovnyakpa.personal_expenses.utils.auth.AuthUtils;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
@@ -15,28 +18,42 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Objects;
-import java.util.Optional;
 
+@Slf4j
 @RequiredArgsConstructor
 @Service
 public class ExpensesServiceImpl implements ExpensesService {
 
     private final ExpensesRepository expenseRepository;
     private final ExpenseConverter expenseConverter;
+    private final AuthUtils authUtils;
 
     @Override
     public List<Expense> getAll(int realPageIndex, int pageSize) {
-        return expenseRepository.findAll(PageRequest.of(realPageIndex - 1, pageSize)).getContent();
+        var user = authUtils.getCurrentUsername();
+        return expenseRepository
+                .findAllByUsername(user, PageRequest.of(realPageIndex - 1, pageSize))
+                .getContent();
     }
 
     @Override
-    public Optional<Expense> getById(Long id) {
-        return expenseRepository.findById(id);
+    public Expense getById(Long id) {
+        Expense res = expenseRepository.findById(id).orElseThrow(() ->
+                new ResourceNotFoundException(String.format("Product with id %s not found", id))
+        );
+        if (!Objects.equals(res.getUsername(), authUtils.getCurrentUsername())) {
+            throw new ResourceForbiddenException(
+                    String.format("Resource with id %s is forbidden for current user", id)
+            );
+        }
+        return res;
     }
 
+    @Transactional
     @Override
     public void deleteById(Long id) {
-        expenseRepository.deleteById(id);
+        var user = authUtils.getCurrentUsername();
+        expenseRepository.deleteByIdAndUsername(id, user);
     }
 
     @Override
@@ -52,21 +69,19 @@ public class ExpensesServiceImpl implements ExpensesService {
     @Transactional
     @Override
     public Expense update(ExpenseDtoRq newExpense) {
-        return getById(newExpense.getId()).map(exp -> {
-            exp.setTitle(newExpense.getTitle());
-            exp.setAmount(newExpense.getAmount());
-            exp.setCategory(newExpense.getCategory());
-            exp.setDescription(newExpense.getDescription());
-            exp.setDateTime(newExpense.getDateTime());
-            return save(exp);
-        }).orElseThrow(() ->
-                new ResourceNotFoundException(
-                        String.format(
-                                "Resource can't be updated, because resource with %s not exists",
-                                newExpense.getId()
-                        )
-                )
-        );
+        var exp = getById(newExpense.getId());
+        var user = authUtils.getCurrentUsername();
+        if (!Objects.equals(exp.getUsername(), user)) {
+            throw new ResourceForbiddenException(
+                    String.format("Resource with id %s not belongs to current user", exp.getId())
+            );
+        }
+        exp.setTitle(newExpense.getTitle());
+        exp.setAmount(newExpense.getAmount());
+        exp.setCategory(newExpense.getCategory());
+        exp.setDescription(newExpense.getDescription());
+        exp.setDateTime(newExpense.getDateTime());
+        return save(exp);
     }
 
     @Override
@@ -79,8 +94,9 @@ public class ExpensesServiceImpl implements ExpensesService {
     ) {
         Sort.Direction sortDir = getSortDirection(sortDirection);
         PageRequest pr = PageRequest.of(realPageIndex - 1, pageSize, sortDir, "amount");
+        var user = authUtils.getCurrentUsername();
         return expenseRepository
-                .findByDateTimeBetween(startDate, endDate, pr)
+                .findByUsernameAndDateTimeBetween(startDate, endDate, user, pr)
                 .getContent();
     }
 
@@ -93,7 +109,8 @@ public class ExpensesServiceImpl implements ExpensesService {
             int pageSize
     ) {
         PageRequest pr = PageRequest.of(realPageIndex - 1, pageSize);
-        return expenseRepository.getExpenseSumByCategory(startDate, endDate, pr).getContent();
+        var user = authUtils.getCurrentUsername();
+        return expenseRepository.getExpenseSumByCategory(startDate, endDate, user, pr).getContent();
     }
 
     private Sort.Direction getSortDirection(String sortDirection) {

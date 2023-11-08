@@ -5,6 +5,7 @@ import com.github.golovnyakpa.personal_expenses.dao.entities.ExpensesSumByCatego
 import com.github.golovnyakpa.personal_expenses.dtos.request.ExpenseDtoRq;
 import com.github.golovnyakpa.personal_expenses.dtos.response.ExpenseDtoRs;
 import com.github.golovnyakpa.personal_expenses.dtos.response.ExpensesSumByCategoryRs;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
@@ -23,8 +24,10 @@ public class ExpenseConverter {
     }
 
     public Expense dtoRqToEntity(ExpenseDtoRq expenseDtoRq) {
+        var username = SecurityContextHolder.getContext().getAuthentication().getName();
         var newExpense = new Expense();
         newExpense.setTitle(expenseDtoRq.getTitle());
+        newExpense.setUsername(username);
         newExpense.setAmount(expenseDtoRq.getAmount());
         newExpense.setCategory(expenseDtoRq.getCategory());
         newExpense.setDescription(expenseDtoRq.getDescription());

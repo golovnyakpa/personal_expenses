@@ -6,12 +6,11 @@ import com.github.golovnyakpa.personal_expenses.dtos.request.ExpenseDtoRq;
 
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Optional;
 
 public interface ExpensesService {
     List<Expense> getAll(int realPageIndex, int pageSize);
 
-    Optional<Expense> getById(Long id);
+    Expense getById(Long id);
 
     void deleteById(Long id);
 

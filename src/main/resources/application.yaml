@@ -29,10 +29,12 @@ spring:
       hibernate:
         format_sql: true
         dialect: org.hibernate.dialect.H2Dialect
-        query:
-          substitutions:
   h2:
     console:
       enabled: true
       settings:
         web-allow-others: true
+
+springdoc:
+  api-docs:
+    path: /api-docs

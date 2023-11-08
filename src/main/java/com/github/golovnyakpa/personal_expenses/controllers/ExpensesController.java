@@ -4,15 +4,16 @@ import com.github.golovnyakpa.personal_expenses.converters.ExpenseConverter;
 import com.github.golovnyakpa.personal_expenses.dao.entities.Expense;
 import com.github.golovnyakpa.personal_expenses.dtos.request.ExpenseDtoRq;
 import com.github.golovnyakpa.personal_expenses.dtos.response.ExpenseDtoRs;
-import com.github.golovnyakpa.personal_expenses.exceptions.ResourceNotFoundException;
 import com.github.golovnyakpa.personal_expenses.services.ExpensesService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Slf4j
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/expenses")
@@ -38,11 +39,7 @@ public class ExpensesController {
 
     @GetMapping("/{id}")
     public ExpenseDtoRs getById(@PathVariable Long id) {
-        Expense res = expensesService
-                .getById(id)
-                .orElseThrow(() ->
-                        new ResourceNotFoundException(String.format("Product with id %s not found", id))
-                );
+        Expense res = expensesService.getById(id);
         return expenseConverter.entityToDto(res);
     }
 

@@ -2,6 +2,7 @@ create table expenses
 (
     id          bigserial primary key,
     title       varchar(300),
+    username    varchar(50) not null,
     amount      int,
     category    varchar(300),
     description varchar(1000),

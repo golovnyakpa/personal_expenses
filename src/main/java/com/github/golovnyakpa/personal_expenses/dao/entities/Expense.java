@@ -16,6 +16,9 @@ public class Expense {
     @Column(name = "id")
     private Long id;
 
+    @Column(name = "username")
+    private String username;
+
     @Column(name = "title")
     private String title;
 
