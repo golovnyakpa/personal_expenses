@@ -5,6 +5,10 @@ server:
   error:
     include-message: always
 
+jwt:
+  secret: secretkeysecretkeysecretkeysecretkeysecretkeysecretkeysecretkey
+  lifetime: 1h
+
 logging:
   level:
     org:

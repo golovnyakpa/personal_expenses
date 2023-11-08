@@ -8,9 +8,28 @@ create table expenses
     date_time   timestamp
 );
 
--- create table expenses
--- (
---     id     INTEGER PRIMARY KEY,
---     title  TEXT,
---     amount INTEGER
--- );
+create table users
+(
+    id       bigserial primary key,
+    username varchar(50)  not null unique,
+    password varchar(100) not null,
+    email    varchar(100) not null
+);
+
+create table roles
+(
+    id   serial primary key,
+    name varchar(50) not null
+);
+
+CREATE TABLE users_roles
+(
+    user_id bigint not null,
+    role_id int    not null,
+    primary key (user_id, role_id),
+    foreign key (user_id) references users (id),
+    foreign key (role_id) references roles (id)
+);
+
+insert into roles (name)
+values ('USER');
