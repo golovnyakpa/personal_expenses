@@ -20,5 +20,5 @@ public interface ExpensesService {
 
     List<Expense> getSortedExpenses(LocalDateTime startDate, LocalDateTime endDate, String sortDirection, int realPageIndex, int pageSize);
 
-    List<ExpensesSumByCategory> getSortedExpensesByCategory(LocalDateTime startDate, LocalDateTime endDate, String sortDirection, int realPageIndex, int pageSize);
+    List<ExpensesSumByCategory> getSortedExpensesByCategory(LocalDateTime startDate, LocalDateTime endDate, int realPageIndex, int pageSize);
 }

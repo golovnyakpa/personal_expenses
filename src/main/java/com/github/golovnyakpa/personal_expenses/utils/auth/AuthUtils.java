@@ -8,8 +8,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class AuthUtils {
     public String getCurrentUsername() {
-        var user = SecurityContextHolder.getContext().getAuthentication().getName();
-        log.info("Current user is " + user);
         return SecurityContextHolder.getContext().getAuthentication().getName();
     }
 }

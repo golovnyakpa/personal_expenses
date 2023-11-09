@@ -51,7 +51,6 @@ public class JwtTokenUtils {
         return getAllClaimsFromToken(token).get("roles", List.class);
     }
 
-    // todo throws io.jsonwebtoken.MalformedJwtException, handle it
     private Claims getAllClaimsFromToken(String token) {
         return Jwts.parser()
                 .setSigningKey(secret)
