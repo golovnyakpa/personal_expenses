@@ -104,7 +104,6 @@ public class ExpensesServiceImpl implements ExpensesService {
     public List<ExpensesSumByCategory> getSortedExpensesByCategory(
             LocalDateTime startDate,
             LocalDateTime endDate,
-            String sortDirection,
             int realPageIndex,
             int pageSize
     ) {

@@ -2,6 +2,7 @@ package com.github.golovnyakpa.personal_expenses.configs;
 
 import com.github.golovnyakpa.personal_expenses.utils.auth.JwtTokenUtils;
 import io.jsonwebtoken.ExpiredJwtException;
+import io.jsonwebtoken.MalformedJwtException;
 import io.jsonwebtoken.security.SignatureException;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -42,6 +43,8 @@ public class JwtRequestFilter extends OncePerRequestFilter {
                 log.info("Token expired");
             } catch (SignatureException e) {
                 log.info("Signature is incorrect");
+            } catch (MalformedJwtException e) {
+                log.info("Token is malformed");
             }
         }
         if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {

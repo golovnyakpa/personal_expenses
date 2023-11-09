@@ -1,9 +1,9 @@
 create table expenses
 (
     id          bigserial primary key,
-    title       varchar(300),
-    username    varchar(50) not null,
-    amount      int,
+    title       varchar(300) not null,
+    username    varchar(50)  not null,
+    amount      int          not null,
     category    varchar(300),
     description varchar(1000),
     date_time   timestamp

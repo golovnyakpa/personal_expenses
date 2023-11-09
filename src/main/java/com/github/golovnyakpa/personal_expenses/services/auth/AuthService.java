@@ -38,13 +38,13 @@ public class AuthService {
         return ResponseEntity.ok(new JwtRs(token));
     }
 
-    // todo add message of error
     public ResponseEntity<?> createNewUser(@RequestBody RegistrationUserDtoRq registrationUserDto) {
         if (!registrationUserDto.getPassword().equals(registrationUserDto.getConfirmPassword())) {
-            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>("Passwords are not identical", HttpStatus.BAD_REQUEST);
         }
+        // todo check error code
         if (userService.findByUsername(registrationUserDto.getUsername()).isPresent()) {
-            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>("Such user already exists", HttpStatus.BAD_REQUEST);
         }
         User user = userService.createNewUser(registrationUserDto);
         return ResponseEntity.ok(new UserDtoRs(user.getId(), user.getUsername(), user.getEmail()));

@@ -20,6 +20,7 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(new ErrorDto(e.getMessage()), HttpStatus.NOT_FOUND);
     }
 
+    // todo return objects instead of string
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<ErrorDto> notValid(MethodArgumentNotValidException ex) {
         List<String> errors = new ArrayList<>();

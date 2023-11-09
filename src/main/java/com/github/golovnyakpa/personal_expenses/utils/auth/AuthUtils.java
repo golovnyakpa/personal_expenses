@@ -7,9 +7,9 @@ import org.springframework.stereotype.Component;
 @Slf4j
 @Component
 public class AuthUtils {
+
+    // todo use principal
     public String getCurrentUsername() {
-        var user = SecurityContextHolder.getContext().getAuthentication().getName();
-        log.info("Current user is " + user);
         return SecurityContextHolder.getContext().getAuthentication().getName();
     }
 }
